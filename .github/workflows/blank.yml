@@ -21,6 +21,8 @@ jobs:
         mkdir -p b1
         cp ../README.md b1/README.md
         git add b1
+        git config --local user.email "ckaestne@nomail.cs.cmu.edu"
+        git config --local user.name "GitHub Action"
         git commit --allow-empty -m "Update pages for b1"
         
     - name: Push changes
