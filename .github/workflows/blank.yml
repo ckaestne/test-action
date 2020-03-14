@@ -22,6 +22,14 @@ jobs:
         cp ../README.md b1/README.md
         git add b1
         git commit --allow-empty -m "Update pages for b1"
-        git push --quiet --force git@github.com:ckaestne/test-action.git gh-pages
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}       
+        directory: '.gh-pages'
+        branch: 'gh-pages'
+        force: true 
+      
 
         
