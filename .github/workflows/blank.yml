@@ -11,4 +11,4 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run a one-line script
-      run: echo Running $GITHUB_REF, <<${{ github.repository.clone_url }}>>
+      run: echo Running $GITHUB_REF, [${{ github.repository }}]
