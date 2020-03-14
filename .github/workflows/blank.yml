@@ -12,3 +12,16 @@ jobs:
 
     - name: Run a one-line script
       run: echo Running $GITHUB_REF
+
+    - name: Push to ghpages
+      run: |
+        git clone --quiet --branch gh-pages --depth 1 git@github.com:ckaestne/test-action.git .gh-pages
+        cd .gh-pages
+        git rm -rf b1
+        mkdir -p b1
+        cp ../README.md b1/README.md
+        git add b1
+        git commit --allow-empty -m "Update pages for b1"
+        git push --quiet --force git@github.com:ckaestne/test-action.git gh-pages
+
+        
