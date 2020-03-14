@@ -15,7 +15,7 @@ jobs:
 
     - name: Push to ghpages
       run: |
-        git clone --quiet --branch gh-pages --depth 1 git@github.com:ckaestne/test-action.git .gh-pages
+        git clone --quiet --branch gh-pages --depth 1 https://github.com/ckaestne/test-action.git .gh-pages
         cd .gh-pages
         git rm -rf b1
         mkdir -p b1
